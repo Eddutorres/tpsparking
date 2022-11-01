@@ -19,3 +19,7 @@ Route::get('/', function (GuzzleHttp\Client $client){
     $data = json_decode($response->getBody());
     dd($data);
 });
+
+Route::get('/inicio', function(){
+    return view('inicio');
+});
