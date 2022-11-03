@@ -15,11 +15,15 @@ use GuzzleHttp\Client;
 
 Route::get('/', function (GuzzleHttp\Client $client){ 
 
-    $response = $client->request('GET', "personas");
+    $response = $client->request('GET', "todasPersonas");
     $data = json_decode($response->getBody());
     dd($data);
 });
 
 Route::get('/inicio', function(){
     return view('inicio');
+});
+
+Route::get('/registro', function(){
+    return view('registro');
 });
