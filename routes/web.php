@@ -16,8 +16,11 @@ use App\Http\Controllers\RegistroController;
 
 Route::get('/', function (){ 
 
-    return view('welcome');
+    $response = $client->request('GET', "personas");
+    $data = json_decode($response->getBody());
+    dd($data);
 });
 
-Route::get('registros', [RegistroController::class,'index']);
-Route::get('registro/salida/{id}', [RegistroController::class,'regSalida'])->name('registro.salida');
+Route::get('/inicio', function(){
+    return view('inicio');
+});
