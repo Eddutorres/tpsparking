@@ -14,10 +14,20 @@ use App\Http\Controllers\RegistroController;
 |
 */
 
-Route::get('/', function (){ 
+/*Route::get('/', function (){ 
 
     return view('welcome');
-});
+});*/
 
-Route::get('registros', [RegistroController::class,'index']);
-Route::get('registro/salida/{id}', [RegistroController::class,'regSalida'])->name('registro.salida');
+
+Route::get('/', [RegistroController::class,'index'])->name('todoslosregistros');
+Route::get('registros/edit/{id}', [RegistroController::class,'edit'])->name('editarSalida');
+Route::put('update/', [RegistroController::class,'confirmarSalida'])->name('guardarsalida');
+Route::get('registros/crear', function (){ 
+
+    return view('registros/create');
+});
+//Route::get('registros/crear',[RegistroController::class, 'post'])->name('registro.crearRegistro');
+Route::post('registros/crear',[RegistroController::class, 'store'])->name('registro.store');
+Route::get('registros/buscarpatente/', [RegistroController::class,'buscarpatente'])->name('buscarpatente');
+Route::get('registros/buscarrut/', [RegistroController::class,'buscarrut'])->name('buscarrut');
