@@ -23,6 +23,10 @@
     </head>
     <body class="antialiased">
 
+      <div>
+        <a href="{{route('registro.crearRegistro')}}" class="btn btn-warning">Registrar ingreso</a>
+      </div>
+     
     <table class="table">
   <thead>
     <tr>

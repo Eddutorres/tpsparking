@@ -19,5 +19,8 @@ Route::get('/', function (){
     return view('welcome');
 });
 
-Route::get('registros', [RegistroController::class,'index']);
+Route::get('registros', [RegistroController::class,'index'])->name('registro.index');
 Route::get('registro/salida/{id}', [RegistroController::class,'regSalida'])->name('registro.salida');
+
+Route::get('crearRegistros',[RegistroController::class, 'post'])->name('registro.crearRegistro');
+Route::post('crearRegistros',[RegistroController::class, 'store'])->name('registro.store');
