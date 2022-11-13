@@ -2,6 +2,7 @@
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegistroController;
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,6 @@ Route::get('registros/crear', function (){
 Route::post('registros/crear',[RegistroController::class, 'store'])->name('registro.store');
 Route::get('registros/buscarpatente/', [RegistroController::class,'buscarpatente'])->name('buscarpatente');
 Route::get('registros/buscarrut/', [RegistroController::class,'buscarrut'])->name('buscarrut');
+
+Route::get('login', [AuthController::class,'login'])->name('login');
+Route::post('loginApp', [AuthController::class,'loginApp'])->name('loginApp');

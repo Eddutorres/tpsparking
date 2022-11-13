@@ -9,7 +9,7 @@ class RegistroController extends Controller
 {
  
      public function store(Request $request){
-         Http::post('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/crearRegistro',[
+         Http::post('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro',[
              'fecha'=>$request->fecha,
              'codigo_est'=>$request->codigo_est,
              'hora_ingreso'=>$request->hora_ingreso,
@@ -23,13 +23,13 @@ class RegistroController extends Controller
 
     public function index(){
         
-        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/todosRegistros')->json();
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registros')->json();
     
        return view('registros/index',compact('registros'));
     }
     public function edit($id){
 
-        $registro = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/buscarIdRegistro/'.$id)->json();
+        $registro = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro/'.$id)->json();
         return view('registros/edit',compact('registro'));
     }
     public function confirmarSalida(Request $registro){
@@ -44,13 +44,13 @@ class RegistroController extends Controller
     public function buscarpatente(Request $registros){
 
         $patente = $registros->patente;
-        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/buscarPatenteRegistro/'.$patente)->json();
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registroPatente/'.$patente)->json();
         return view('registros/index',compact('registros'));
     }
     public function buscarrut(Request $registros){
 
         $rut = $registros->rut;
-        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/buscarRutRegistro/'.$rut)->json();
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registroRut/'.$rut)->json();
         return view('registros/index',compact('registros'));
     }
 
