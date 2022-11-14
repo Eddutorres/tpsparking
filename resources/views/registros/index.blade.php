@@ -31,7 +31,7 @@
         <form action="{{route('buscarpatente')}}" method="get">
           <div class="form-row">
               <div class="cl-sm-7 my-1">
-                <input type="text" name="patente" class="form-control" value="">
+                <input type="text" name="patente" class="form-control" value="" required>
               </div>
                 <div class="col-auto my-1">
                 <input type="submit" class="btn btn-primary" value="Buscar Patente">

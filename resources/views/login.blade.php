@@ -33,13 +33,13 @@
   
             <!-- Email input -->
             <div class="form-outline mb-4">
-            <input type="email" id="email" class="form-control" />
+            <input type="email" name='email'id="email" class="form-control" />
             <label class="form-label" for="email">Email</label>
             </div>
     
             <!-- Password input -->
             <div class="form-outline mb-4">
-            <input type="password" id="password" class="form-control" />
+            <input type="password" name='password' id="password" class="form-control" />
             <label class="form-label" for="password">Password</label>
             </div>
     
