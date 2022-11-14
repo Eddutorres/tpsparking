@@ -61,6 +61,7 @@
                                       <th scope="col">#</th>
                                       <th scope="col">Fecha</th>
                                       <th scope="col">Estacionamiento</th>
+                                      <th scope="col">Estado</th>
                                       <th scope="col">Hora ingreso</th>
                                       <th scope="col">Hora salida</th>
                                       <th scope="col">Rut</th>
@@ -73,6 +74,7 @@
                                       <td>{{$registro['id']}}</td>
                                       <td>{{$registro['fecha']}}</td>
                                       <td>{{$registro['codigo_est']}}</td>
+                                      <td>{{$registro['estado_est']}}</td>
                                       <td>{{$registro['hora_ingreso']}}</td>
                                       <td>{{$registro['hora_salida']}}</td>
                                       <td>{{$registro['rut']}}</td>

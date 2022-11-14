@@ -36,14 +36,19 @@
       <div class="mb-3">
         <label class="form-label">Estacionamiento</label>
         <input type="text" name="codigo_est" id="codigo_est">
-    </div>
-    <div class="mb-3">Hora Ingreso</label>
-        <input type="time" name="hora_ingreso" id="hora_ingreso">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Rut</label>
-        <input type="text" name="rut" id="rut">
-    </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Estado</label>
+        <input type="text" name="estado_est" id="estado_est">
+      </div>
+        <div class="mb-3">
+            <label class="form-label">Hora Ingreso</label>
+            <input type="time" name="hora_ingreso" id="hora_ingreso">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Rut</label>
+            <input type="text" name="rut" id="rut">
+        </div>
       <div class="mb-3">
           <label class="form-label">Patente</label>
           <input type="text" name="patente" id="patente">

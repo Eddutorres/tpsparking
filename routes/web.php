@@ -17,11 +17,16 @@ use App\Http\Controllers\RegistroController;
 
 /*Route::get('/', function (){ 
 
-    return view('welcome');
+    return view('tema.registros');
 });*/
 
+Route::get('/principal', function (){ 
 
-Route::get('/', [RegistroController::class,'index'])->name('todoslosregistros');
+    return view('tema.principal');
+});
+
+Route::get('/', [RegistroController::class,'mostrarEst'])->name('mostrarest');
+Route::get('registros', [RegistroController::class,'index'])->name('todoslosregistros');
 Route::get('registros/edit/{id}', [RegistroController::class,'edit'])->name('editarSalida');
 Route::put('update/', [RegistroController::class,'confirmarSalida'])->name('guardarsalida');
 Route::get('registros/crear', function (){ 

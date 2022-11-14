@@ -12,6 +12,7 @@ class RegistroController extends Controller
          Http::post('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro',[
              'fecha'=>$request->fecha,
              'codigo_est'=>$request->codigo_est,
+             'estado_est'=>$request->estado_est,
              'hora_ingreso'=>$request->hora_ingreso,
              'rut'=>$request->rut,
              'patente'=>$request->patente
@@ -27,6 +28,25 @@ class RegistroController extends Controller
     
        return view('registros/index',compact('registros'));
     }
+
+    public function mostrarEst(){
+
+        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinest/')->json();
+    
+       //return view('tema/grilla', compact('estacionamientos'));
+       return view('tema/registros', compact('estacionamientos'));
+       //return dd($estacionamientos);
+    }
+    
+    public function mostrarSec(Request $estacionamientos){
+
+        $sector = $estacionamientos->get('sector');
+        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/est/'.$sector)->json();
+    
+       return view('tema/grilla', compact('estacionamientos'));
+       //return dd($estacionamientos);
+    }
+
     public function edit($id){
 
         $registro = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro/'.$id)->json();
@@ -53,5 +73,10 @@ class RegistroController extends Controller
         $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registroRut/'.$rut)->json();
         return view('registros/index',compact('registros'));
     }
+    public function buscarsector(Request $registros){
 
+        $rut = $registros->rut;
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registroRut/'.$rut)->json();
+        return view('registros/index',compact('registros'));
+    }
 }
