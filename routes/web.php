@@ -35,5 +35,7 @@ Route::get('registros/buscarrut/', [RegistroController::class,'buscarrut'])->nam
 
 Route::get('login', [AuthController::class,'login'])->name('login');
 Route::post('loginApp', [AuthController::class,'loginApp'])->name('loginApp');
-Route::view('registroUsuario','registros/registroUsuario');
+Route::view('registroUsuario','registros/registroUsuario')->middleware('auth');
 Route::post('registroUsuario',[RegistroController::class,'registroUsuario'])->name('registro.registroUsuario');
+
+Route::get('/loginApp', [AuthController::class,'logout'])->name('logout');

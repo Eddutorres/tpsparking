@@ -43,7 +43,9 @@
             <label class="form-label" for="password">Password</label>
             </div>
     
-
+            @error('message')
+            <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2">{{$message}}</p>
+            @enderror
     
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>

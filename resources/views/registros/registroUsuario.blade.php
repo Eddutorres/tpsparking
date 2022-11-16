@@ -22,18 +22,18 @@
         </div>    
     
         <div class="form-group"> <!-- Street 1 -->
-            <label for="street1_id" class="control-label">Email</label>
-            <input type="text" class="form-control" id="street1_id" name="email">
+            <label for="email_id" class="control-label">Email</label>
+            <input type="text" class="form-control" id="email_id" name="email">
         </div>                    
                                 
         <div class="form-group"> <!-- Street 2 -->
-            <label for="street2_id" class="control-label">Password</label>
-            <input type="password" class="form-control" id="street2_id" name="password">
+            <label for="password" class="control-label">Password</label>
+            <input type="password" class="form-control" id="password_id" name="password">
         </div>    
                                     
         <div class="form-group"> <!-- State Button -->
             <label for="role" class="control-label">Role</label>
-            <select class="form-control" id="role" placeholder="seleccione">
+            <select class="form-control" id="role" placeholder="seleccione" name="role">
                 <option disabled selected>Seleccione Rol</option>
                 <option value="admin">admin</option>
                 <option value="user">user</option>
@@ -46,5 +46,7 @@
         </div>     
         
     </form>
+
+    <a href="{{route('logout')}}">CERRAR SISION </a>
 </body>
 </html>
