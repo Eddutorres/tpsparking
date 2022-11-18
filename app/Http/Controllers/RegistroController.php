@@ -43,7 +43,7 @@ class RegistroController extends Controller
         $sector = $estacionamientos->get('sector');
         $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinest/'.$sector)->json();
     
-       return view('tema/registros', compact('estacionamientos','sector'));
+       return view('ingresos/sector', compact('estacionamientos','sector'));
        //return dd($estacionamientos);
     }
     public function patenteReg(Request $patentes){

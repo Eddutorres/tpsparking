@@ -3,6 +3,7 @@
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RegistroController;
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +33,15 @@ Route::get('/patente', function (){
 
     return view('patente.buscarpatente');
 });
+Route::get('/ingresos', function (){ 
+
+    return view('ingresos.ingresos');
+});
 
 
 //Route::get('/', [RegistroController::class,'mostrarEst'])->name('mostrarest');
-Route::get('joinsec', [RegistroController::class,'mostrarSec'])->name('mostrarsec');
+Route::get('reporte', [ReporteController::class,'crearReporte'])->name('crear.reporte');
+Route::get('ingreso', [RegistroController::class,'mostrarSec'])->name('mostrarsec');
 Route::get('registros', [RegistroController::class,'index'])->name('todoslosregistros');
 Route::get('registros/edit/{id}', [RegistroController::class,'edit'])->name('editarSalida');
 Route::put('update/', [RegistroController::class,'confirmarSalida'])->name('guardarsalida');
@@ -45,7 +51,7 @@ Route::get('registros/crear', function (){
 });
 //Route::get('registros/crear',[RegistroController::class, 'post'])->name('registro.crearRegistro');
 Route::post('registros/crear',[RegistroController::class, 'store'])->name('registro.store');
-Route::get('registros/buscarpatente/', [RegistroController::class,'patenteReg'])->name('buscarpatente');
+Route::get('patente', [RegistroController::class,'patenteReg'])->name('buscarpatente');
 Route::get('registros/buscarrut/', [RegistroController::class,'buscarrut'])->name('buscarrut');
 
 Route::get('login', [AuthController::class,'login'])->name('login');

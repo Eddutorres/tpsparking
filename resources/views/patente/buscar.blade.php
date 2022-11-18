@@ -1,6 +1,4 @@
-<div class="container-fluid">
-    <!-- Content Row -->
-    <div class="row">
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
             <p class="mb-4"></p>
@@ -29,6 +27,7 @@
                                 <tr>
                                     <td>{{$patente['patente']}}</td>
                                     <td>{{$patente['hora_ingreso']}}</td>
+                                    <td>{{$patente['sector']}}</td>
                                     <td>{{$patente['codigo']}}</td>
                                     <td>{{$patente['nombre1']." ".$patente['apellido1']}}</td>
                                     <td>{{$patente['telefono']}}</td>
@@ -48,5 +47,3 @@
 
 
         </div>
-    </div>
-</div>
