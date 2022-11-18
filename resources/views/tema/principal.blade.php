@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Registrar Vehiculos -->
             <li class="nav-item active">
-                <a class="nav-link" href="registrar_ingreso.html">
+                <a class="nav-link" href="{{ url('/joinsec' )}}">
                     <i class="fas fa-fw fa-car"></i>
                     <span>REGISTRAR INGRESO</span></a>
             </li>
@@ -55,7 +55,7 @@
 
             <!-- Nav Item - Generar Reporte -->
             <li class="nav-item active">
-                <a class="nav-link" href="generar_reporte.html">
+                <a class="nav-link" href="{{ url('/reportes' )}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>GENERAR REPORTE</span></a>
             </li>
@@ -84,13 +84,12 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form action="{{route('buscarpatente')}}" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Búsqueda por patente" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Búsqueda por patente" aria-label="Search" aria-describedby="basic-addon2" name="patente" id="patente">
+                                <input type="hidden" class="form-control" name="fecha" id="fecha" value="2022-11-13">
                             <div class="input-group-append">
-                                <a href="resultado_busqueda.html" class="btn btn-primary" type="button">
+                                <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">
                                     <i class="fas fa-search fa-sm"></i>
                                 </a>
                             </div>
@@ -147,10 +146,7 @@
 
 
                     <!-- Content Row -->
-                    @yield('cabecera_est')
-
-                    <!-- Begin Page Content -->
-                    @yield('grilla_est')
+                    @yield('cuerpo_central')
 
                 </div>
 

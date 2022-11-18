@@ -24,6 +24,7 @@
 
                     <tbody>
                         @foreach($estacionamientos as $estacionamiento)
+                       
                         <tr>
                             <td>{{$estacionamiento['codigo_est']}}</td>
                             <td>{{$estacionamiento['patente']}}</td>

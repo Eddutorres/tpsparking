@@ -31,7 +31,7 @@ class RegistroController extends Controller
 
     public function mostrarEst(){
 
-        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinest/')->json();
+        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinest')->json();
     
        //return view('tema/grilla', compact('estacionamientos'));
        return view('tema/registros', compact('estacionamientos'));
@@ -41,9 +41,18 @@ class RegistroController extends Controller
     public function mostrarSec(Request $estacionamientos){
 
         $sector = $estacionamientos->get('sector');
-        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/est/'.$sector)->json();
+        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinest/'.$sector)->json();
     
-       return view('tema/grilla', compact('estacionamientos'));
+       return view('tema/registros', compact('estacionamientos','sector'));
+       //return dd($estacionamientos);
+    }
+    public function patenteReg(Request $patentes){
+
+        $patente = $patentes->get('patente');
+        $fecha = $patentes->get('fecha');
+        $patentes = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/patentereg/'.$patente.'/'.$fecha)->json();
+    
+       return view('patente/buscarpatente', compact('patentes'));
        //return dd($estacionamientos);
     }
 
