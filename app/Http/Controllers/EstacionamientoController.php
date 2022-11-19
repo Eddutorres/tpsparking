@@ -11,7 +11,7 @@ class EstacionamientoController extends Controller
     {
         $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/estacionamiento/'.$codigo)->json();
 
-        return view('ingresos/formingreso', compact('estacionamientos'));
+        return view('register/registro', compact('estacionamientos'));
         //return dd($estacionamiento);
     }
 

@@ -18,7 +18,7 @@ class RegistroController extends Controller
              'patente'=>$request->patente
          ]);
  
-         return to_route('todoslosregistros');
+         return to_route('ingresos.inicio');
      }
 
 
