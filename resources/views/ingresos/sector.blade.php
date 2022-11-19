@@ -45,7 +45,8 @@
                             @if ($estacionamiento['estado_est']==1)
                                 
                             
-                            <td><a href="form_salida.html"
+                            <td>
+                                <a href="form_salida.html"
                                     class="btn btn-danger btn-icon-split btn-sm">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-"></i>
@@ -56,16 +57,19 @@
 
                                 
                             @else
-                            <td><a href="form_salida.html"
-                                class="btn btn-success btn-icon-split btn-sm">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-"></i>
-                                </span>
-                                <span class="text">DISPONIBLE</span>
-                                </a>
+                            <td>
+                                
+                                <a href="{{route('buscarest',$estacionamiento['codigo'])}}"
+                                                        class="btn btn-success btn-icon-split btn-sm">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-"></i>
+                                                        </span>
+                                                        <span class="text">DISPONIBLE</span>
+                                                    </a>
                             </td> 
                             @endif
-                            <td><a href="#" class="btn btn-warning btn-icon-split btn-sm"
+                            <td>
+                                <a href="#" class="btn btn-warning btn-icon-split btn-sm"
                                     data-toggle="modal" data-target="#Edit_GrillaModal">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-edit"></i>

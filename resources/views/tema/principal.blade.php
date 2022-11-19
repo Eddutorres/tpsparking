@@ -87,9 +87,9 @@
                     <form action="{{route('buscarpatente')}}" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Búsqueda por patente" aria-label="Search" aria-describedby="basic-addon2" name="patente" id="patente">
-                                <input type="hidden" class="form-control" name="fecha" id="fecha" value="<?PHP echo date("Y-m-d"); ?>">
+                                <input type="date" class="form-control" name="fecha" id="fecha">
                             <div class="input-group-append">
-                                <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">
+                                <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar" placeholder="Fecha">
                                     <i class="fas fa-search fa-sm"></i>
                                 </a>
                             </div>

@@ -13,6 +13,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <form action="{{route('mostrarsec')}}" method="get">
+                                                    
                                                     <div class="text-s font-weight-bold text-secondary text-uppercase mb-1">
                                                         15 DISPONIBLES</div>
                                                         <input type="hidden" class="form-control" name="sector" id="sector" value="Varas">

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\EstacionamientoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,11 +36,12 @@ Route::get('/patente', function (){
 });
 Route::get('/ingresos', function (){ 
 
-    return view('ingresos.ingresos');
+    return view('ingresos.inicio');
 });
 
 
 //Route::get('/', [RegistroController::class,'mostrarEst'])->name('mostrarest');
+Route::get('est/{codigo}', [EstacionamientoController::class,'buscarEst'])->name('buscarest');
 Route::get('reporte', [ReporteController::class,'crearReporte'])->name('crear.reporte');
 Route::get('ingreso', [RegistroController::class,'mostrarSec'])->name('mostrarsec');
 Route::get('registros', [RegistroController::class,'index'])->name('todoslosregistros');
