@@ -19,7 +19,7 @@
                     <label for="codigo">Estacionamiento</label>
 
                     <div class="mb-3">
-                        <input id="codigo" type="text" name="codigo" value="{{$codigo}}" disabled>
+                        <input class="form-control" id="codigo" type="text" name="codigo" value="{{$codigo}}">
                     </div>
 
                
