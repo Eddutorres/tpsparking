@@ -31,8 +31,8 @@ class RegistroController extends Controller
             'patente'=>$ingreso->patente
         ]);
 
-        //return to_route('ingresoreg');
-        return dd($ingreso);
+        return to_route('ingresoreg');
+        //return dd($ingreso);
     }
 
     public function index(){

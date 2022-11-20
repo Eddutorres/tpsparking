@@ -12,6 +12,12 @@
 @if($sector=="Prat")
 {{$nombre_sec="SECTOR PRAT"}}
 @endif
+@if($sector=="50")
+{{$nombre_sec="SECTOR 50"}}
+@endif
+@if($sector=="Centro")
+{{$nombre_sec="SECTOR CENTRO"}}
+@endif
 <div class="container-fluid">
 
     <p class="mb-4"></p>

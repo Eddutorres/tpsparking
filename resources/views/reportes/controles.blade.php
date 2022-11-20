@@ -16,10 +16,9 @@
                     <label class="label small" for="dateFrom">Filtar por Sector</label>
                     <select class="form-control" name="sector" id="sector">
                         <option class="form-control" value="Varas">Sector Varas</option>
+                        <option class="form-control" value="Centro">Sector Centro</option>
                         <option class="form-control" value="50">Sector 50</option>
-                        <option class="form-control" value="XX">Sector XX</option>
                         <option class="form-control" value="Prat" selected>Sector Prat</option>
-                        <option class="form-control" value="Todos">Todos</option>
                     </select>
                 </div>
                 <td>
