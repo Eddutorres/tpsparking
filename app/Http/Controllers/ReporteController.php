@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Barryvdh\DomPDF\Facade\PDF;
+//use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use PDF;
+use Dompdf\Dompdf;
 
 
 class ReporteController extends Controller
