@@ -3,6 +3,7 @@
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\EstacionamientoController;
@@ -34,14 +35,13 @@ Route::get('/patente', function (){
 
     return view('patente.buscarpatente');
 });
-Route::get('/ingresos', function (){ 
-
-    return view('ingresos.inicio');
-});
+Route::get('/ingresos', function (){return view('ingresos.inicio');})->name('ingresoreg');
 
 
 //Route::get('/', [RegistroController::class,'mostrarEst'])->name('mostrarest');
-Route::get('est/{codigo}', [EstacionamientoController::class,'buscarEst'])->name('buscarest');
+Route::get('persona', [PersonaController::class,'buscarRut'])->name('buscarrut');
+Route::get('reporte/pdf', [ReporteController::class,'downloadPDF'])->name('descargar-pdf');
+Route::get('est', [EstacionamientoController::class,'buscarEst'])->name('buscarest');
 Route::get('reporte', [ReporteController::class,'crearReporte'])->name('crear.reporte');
 Route::get('ingreso', [RegistroController::class,'mostrarSec'])->name('mostrarsec');
 Route::get('registros', [RegistroController::class,'index'])->name('todoslosregistros');
@@ -52,9 +52,10 @@ Route::get('registros/crear', function (){
     return view('registros/create');
 });
 //Route::get('registros/crear',[RegistroController::class, 'post'])->name('registro.crearRegistro');
+Route::post('regingreso',[RegistroController::class, 'guardarReg'])->name('guardar.ingreso');
 Route::post('registros/crear',[RegistroController::class, 'store'])->name('registro.store');
 Route::get('patente', [RegistroController::class,'patenteReg'])->name('buscarpatente');
-Route::get('registros/buscarrut/', [RegistroController::class,'buscarrut'])->name('buscarrut');
+Route::get('registros/buscarrut/', [RegistroController::class,'buscarrut'])->name('buscarrut1');
 
 Route::get('login', [AuthController::class,'login'])->name('login');
 Route::post('loginApp', [AuthController::class,'loginApp'])->name('loginApp');

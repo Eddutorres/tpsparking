@@ -47,7 +47,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ url('/ingresos' )}}">
                     <i class="fas fa-fw fa-car"></i>
-                    <span>REGISTRAR INGRESO</span></a>
+                    <span>ESTACIONAMIENTOS</span></a>
             </li>
 
             <!-- Divider -->
@@ -87,11 +87,9 @@
                     <form action="{{route('buscarpatente')}}" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Búsqueda por patente" aria-label="Search" aria-describedby="basic-addon2" name="patente" id="patente">
-                                <input type="date" class="form-control" name="fecha" id="fecha">
+                                <input type="date" class="form-control" name="fecha" id="fecha" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                             <div class="input-group-append">
-                                <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar" placeholder="Fecha">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </a>
+                                <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">                          
                             </div>
                         </div>
                     </form>

@@ -58,14 +58,10 @@
                                 
                             @else
                             <td>
-                                
-                                <a href="{{route('buscarest',$estacionamiento['codigo'])}}"
-                                                        class="btn btn-success btn-icon-split btn-sm">
-                                                        <span class="icon text-white-50">
-                                                            <i class="fas fa-"></i>
-                                                        </span>
-                                                        <span class="text">DISPONIBLE</span>
-                                                    </a>
+                                <form action="{{route('buscarest')}}" method="get">                            
+                                    <input type="submit" class="btn btn-success btn-icon-split btn-sm" value="   DISPONIBLE   ">
+                                    <input type="hidden" class="form-control" name="codigo" id="codigo" value="{{$estacionamiento['codigo']}}">
+                                </form>
                             </td> 
                             @endif
                             <td>

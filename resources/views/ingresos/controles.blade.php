@@ -14,8 +14,7 @@
                                             <div class="col mr-2">
                                                 <form action="{{route('mostrarsec')}}" method="get">
                                                     
-                                                    <div class="text-s font-weight-bold text-secondary text-uppercase mb-1">
-                                                        15 DISPONIBLES</div>
+                                                    
                                                         <input type="hidden" class="form-control" name="sector" id="sector" value="Varas">
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                                     
@@ -37,8 +36,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <form action="{{route('mostrarsec')}}" method="get">
-                                                <div class="text-s font-weight-bold text-secondary text-uppercase mb-1">
-                                                    8 DISPONIBLES</div>
+                                                
                                                     <input type="hidden" class="form-control" name="sector" id="sector" value="Prat">
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                                 
@@ -59,8 +57,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-secondary text-uppercase mb-1">
-                                                0 DISPONIBLES</div>
+                                            
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                             <a href="grilla_sectorXX.html"
                                                 class="btn btn-primary btn-icon-split btn-primary">
@@ -83,8 +80,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-s font-weight-bold text-secondary text-uppercase mb-1">
-                                                8 DISPONIBLES</div>
+                                            
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                             <a href="grilla_sectorPratt.html"
                                                 class="btn btn-primary btn-icon-split btn-primary">

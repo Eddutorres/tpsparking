@@ -1,5 +1,4 @@
-@extends('tema.principal')
-@section('cuerpo_central')
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -62,4 +61,4 @@
 </body>
 
 </html>
-@endsection
+

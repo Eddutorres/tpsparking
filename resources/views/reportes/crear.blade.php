@@ -4,6 +4,8 @@
 
 @include('reportes.controles')
 
+
+
 <div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered text-center" id="dataTable" width="100%"
@@ -38,4 +40,19 @@
         </table>
     </div>
 </div>
+
+    <!-- DataTales Example -->
+    <div class="card-body">
+        <form action="{{route('descargar-pdf')}}" method="get">
+                <td>
+                    <input type="submit" class="btn btn-warning btn-icon-split right-align btn-sm" value="DESCARGAR REPORTE">
+                </td>
+                <input type="hidden" id="sector" name="sector" value="{{ $sector }}">
+                <input type="hidden" id="fecha_ini" name="fecha_ini" value="{{ $fecha_ini }}">
+                <input type="hidden" id="fecha_fin" name="fecha_fin" value="{{ $fecha_fin }}">
+        </form>
+    </div>
+
+
+
 @endsection

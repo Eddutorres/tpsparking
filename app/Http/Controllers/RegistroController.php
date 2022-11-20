@@ -18,9 +18,22 @@ class RegistroController extends Controller
              'patente'=>$request->patente
          ]);
  
-         return to_route('ingresos.inicio');
+         return to_route('todoslosregistros');
      }
+     public function guardarReg(Request $ingreso){
 
+        Http::post('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro',[
+            'fecha'=>$ingreso->fecha,
+            'codigo_est'=>$ingreso->codigo,
+            'estado_est'=>$ingreso->estado_est,
+            'hora_ingreso'=>$ingreso->hora_ingreso,
+            'rut'=>$ingreso->rut,
+            'patente'=>$ingreso->patente
+        ]);
+
+        //return to_route('ingresoreg');
+        return dd($ingreso);
+    }
 
     public function index(){
         
@@ -30,7 +43,7 @@ class RegistroController extends Controller
     }
 
     public function mostrarEst(){
-
+       
         $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinest')->json();
     
        //return view('tema/grilla', compact('estacionamientos'));
