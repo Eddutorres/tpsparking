@@ -52,13 +52,10 @@
                                 
                             
                             <td>
-                                <a href="form_salida.html"
-                                    class="btn btn-danger btn-icon-split btn-sm">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-"></i>
-                                    </span>
-                                    <span class="text">OCUPADO</span>
-                                </a>
+                                <form action="{{route('editarSalida')}}" method="get">      
+                                    <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">                      
+                                    <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="   OCUPADO   ">
+                                </form>
                             </td>
 
                                 

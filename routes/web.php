@@ -36,17 +36,18 @@ Route::get('/patente', function (){
     return view('patente.buscarpatente');
 });
 Route::get('/ingresos', function (){return view('ingresos.inicio');})->name('ingresoreg');
-
+//Route::get('/salidas', function (){ return view('salidas.formsalida');})->name('salidas');
 
 //Route::get('/', [RegistroController::class,'mostrarEst'])->name('mostrarest');
+Route::get('salidas', [RegistroController::class,'buscarjoinId'])->name('editarSalida');
 Route::get('persona', [PersonaController::class,'buscarRut'])->name('buscarrut');
 Route::get('reporte/pdf', [ReporteController::class,'downloadPDF'])->name('descargar-pdf');
 Route::get('est', [EstacionamientoController::class,'buscarEst'])->name('buscarest');
 Route::get('reporte', [ReporteController::class,'crearReporte'])->name('crear.reporte');
 Route::get('ingreso', [RegistroController::class,'mostrarSec'])->name('mostrarsec');
 Route::get('registros', [RegistroController::class,'index'])->name('todoslosregistros');
-Route::get('registros/edit/{id}', [RegistroController::class,'edit'])->name('editarSalida');
-Route::put('update/', [RegistroController::class,'confirmarSalida'])->name('guardarsalida');
+Route::get('registros/edit/{id}', [RegistroController::class,'edit'])->name('editarSalida2');
+Route::put('salida', [RegistroController::class,'confirmarSalida'])->name('confirmarsalida');
 Route::get('registros/crear', function (){ 
 
     return view('registros/create');

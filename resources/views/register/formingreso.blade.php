@@ -73,7 +73,7 @@
                     <hr class="sidebar-divider">
                     <input type="submit" class="btn btn-success btn-success" value="Asignar Estacionamiento">
                 <a class="btn btn-secondary btn-secondary"
-                    href="registrar_ingreso.html">Cancelar</a>
+                    href="{{ url('/ingresos' )}}">Cancelar</a>
                     
             </form>
         </div>

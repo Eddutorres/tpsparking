@@ -71,16 +71,19 @@ class RegistroController extends Controller
 
     public function edit($id){
 
-        $registro = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro/'.$id)->json();
-        return view('registros/edit',compact('registro'));
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro/'.$id)->json();
+        return view('salidas/formsalida',compact('registros'));
     }
     public function confirmarSalida(Request $registro){
 
         $idregistro = $registro->id; 
         Http::put('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registrarSalida/'.$idregistro,[
+        
+        'estado_est' => $registro->estado_est,
         'hora_salida' => $registro->hora_salida,
         ]);
-        return to_route('todoslosregistros');
+        return to_route('ingresoreg');
+        //return dd($registro);
 
     }
     public function buscarpatente(Request $registros){
@@ -100,5 +103,13 @@ class RegistroController extends Controller
         $rut = $registros->rut;
         $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registroRut/'.$rut)->json();
         return view('registros/index',compact('registros'));
+    }
+    public function buscarjoinId(Request $registros){
+
+        $id = $registros->id;
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinid/'.$id)->json();
+
+        return view('salidas/formsalida',compact('registros'));
+        //return dd($registros);
     }
 }

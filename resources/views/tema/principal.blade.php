@@ -171,7 +171,7 @@
 
                         <div class="modal-footer">
                             <button class="btn btn-primary" type="button" data-dismiss="modal">Aceptar</button>
-                            <a class="btn btn-secondary" href="grilla_sector_varas.html">Salir</a>
+                            <a class="btn btn-secondary" href="{{ url('/ingresos' )}}">Salir</a>
                         </div>
                     </div>
                 </div>
