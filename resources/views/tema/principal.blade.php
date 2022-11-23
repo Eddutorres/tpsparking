@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 </head>
 
@@ -152,32 +153,7 @@
 
             </div>
             <!-- Editar Grilla Modal-->
-            <div class="modal fade" id="Edit_GrillaModal" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-
-                            <label class="modal-title" id="exampleModalLabel">Ingrese el nuevo número de
-                                Estacionamiento: </label>
-
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true"></span>
-                            </button>
-                            <input class="form-control">
-
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="button" data-dismiss="modal">Aceptar</button>
-                            <a class="btn btn-secondary" href="{{ url('/ingresos' )}}">Salir</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- End of Main Content -->
+            
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

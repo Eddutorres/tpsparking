@@ -12,7 +12,7 @@
         </div>
         <div class="card-body">
             <!-- Registration form-->
-            <form method="POST" action="{{route('confirmarsalida')}}" method="get">
+            <form method="POST" action="{{route('confirmarsalida')}}">
                 @csrf
                 @method('PUT')
                 

@@ -8,6 +8,7 @@
         <form action="{{route('crear.reporte')}}" method="get">
             <div class="card-header py-3">
                 <div class="mb-3 py-12">
+                    <div class="col-md-3">
                     <label class="label small" for="dateFrom">Desde</label>
                     <input type="date" id="fecha_ini" class="form-control" name="fecha_ini" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                     <label class="control-label small" for="dateFrom">Hasta</label>
@@ -20,6 +21,7 @@
                         <option class="form-control" value="50">Sector 50</option>
                         <option class="form-control" value="Prat" selected>Sector Prat</option>
                     </select>
+                    </div>
                 </div>
                 <td>
                     <hr class="sidebar-divider">

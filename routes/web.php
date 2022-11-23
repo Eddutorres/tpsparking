@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\EstacionamientoController;
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +36,13 @@ Route::get('/patente', function (){
 
     return view('patente.buscarpatente');
 });
+
+Route::get('cambiar', [RegistroController::class,'enviarId'])->name('cambiarest');
 Route::get('/ingresos', function (){return view('ingresos.inicio');})->name('ingresoreg');
 //Route::get('/salidas', function (){ return view('salidas.formsalida');})->name('salidas');
 
 //Route::get('/', [RegistroController::class,'mostrarEst'])->name('mostrarest');
+Route::put('cambiarest', [RegistroController::class,'cambiarEst'])->name('cambiar.estacionamiento');
 Route::get('salidas', [RegistroController::class,'buscarjoinId'])->name('editarSalida');
 Route::get('persona', [PersonaController::class,'buscarRut'])->name('buscarrut');
 Route::get('reporte/pdf', [ReporteController::class,'downloadPDF'])->name('descargar-pdf');
@@ -60,3 +64,4 @@ Route::get('registros/buscarrut/', [RegistroController::class,'buscarrut'])->nam
 
 Route::get('login', [AuthController::class,'login'])->name('login');
 Route::post('loginApp', [AuthController::class,'loginApp'])->name('loginApp');
+Route::get('/patentes', 'VehiculoController@buscarPatente');

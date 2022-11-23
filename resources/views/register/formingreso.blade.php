@@ -4,7 +4,7 @@
     <div class="card shadow-lg border-0 rounded-lg mt-5">
 
         <div class="card-header justify-content-center">
-            <h3 class="fw-light my-4">Registrar Ingreso</h3>
+            <h3 class="fw-light my-4">Registrar Ingreso 3</h3>
         </div>
 
         <div class="card-body">
@@ -45,7 +45,7 @@
                         <!-- Form Group (last name)-->
                         <div class="mb-3">
                             <input class="form-control" id="conductor" type="text" placeholder="Conductor" 
-                            value=" {{ $persona['nombre1'].' '.$persona['nombre2'].' '.$persona['apellido1'].' '.$persona['apellido2'] }} " disabled>
+                            value=" {{ $conductor['nombre1'].' '.$persona['nombre2'].' '.$persona['apellido1'].' '.$persona['apellido2'] }} " disabled>
 
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    
                 </div><br>
              
                 <!-- Form Group (create account submit)-->

@@ -16,6 +16,8 @@
 </head>
 <body>
 <h2>Reporte de Estacionamientos</h2>
+<br>
+<h5>Fecha reporte: <?php date_default_timezone_set("America/Santiago"); echo date("d-m-Y H:i");?></h5>
 <div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered text-center" id="dataTable" width="100%"

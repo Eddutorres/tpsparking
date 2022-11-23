@@ -112,4 +112,22 @@ class RegistroController extends Controller
         return view('salidas/formsalida',compact('registros'));
         //return dd($registros);
     }
+    public function cambiarEst(Request $registro){
+
+        $idregistro = $registro->id; 
+        Http::put('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/modificarUbicacion/'.$idregistro,[
+        
+        'codigo_est' => $registro->codigo_est,
+        ]);
+        return to_route('ingresoreg');
+        //return dd($registro);
+
+    }
+    public function enviarId(Request $registro){
+
+        $id= $registro->get('id');
+            
+       return view('ingresos/cambiarest', compact('id'));
+       //return dd($estacionamientos);
+    }
 }

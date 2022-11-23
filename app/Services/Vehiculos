@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Services;
+
+use Illuminate\Http\Request;
+
+class VehiculosServices extends Services
+{
+
+    public function get()
+    {
+        $patentes = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/patenteRut/'.$rut);
+        $patenteArray[''] = 'Selecciona una patente';
+        foreach ($patentes as $patente){
+            $patenteArray[$patente->pat_id] = $patente->patente;
+        }
+        return $patenteArray;
+
+    }
+
+
+    
+}
+
+

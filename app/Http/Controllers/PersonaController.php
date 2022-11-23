@@ -12,7 +12,11 @@ class PersonaController extends Controller
 
         $rut = $personas->rut;
         $codigo = $personas->get('codigo');
+        $rut = $personas->get('rut');
         $personas = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/buscarRut/'.$rut)->json();
-        return view('register/enviar',compact('personas','codigo'));
+
+        $patentes = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/patenteRut/'.$rut)->json();
+
+        return view('register/patente',compact('personas','codigo','patentes'));
 }
 }

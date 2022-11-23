@@ -38,7 +38,7 @@
                             <th>Patente</th>
                             <th>Hora Ingreso</th>
                             <th>Estado</th>
-                            <th>Editar</th>
+                            <th>Cambiar</th>
                         </tr>
                     </thead>
 
@@ -68,13 +68,10 @@
                             </td> 
                             @endif
                             <td>
-                                <a href="#" class="btn btn-warning btn-icon-split btn-sm"
-                                    data-toggle="modal" data-target="#Edit_GrillaModal">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-edit"></i>
-                                    </span>
-
-                                </a>
+                                <form action="{{route('cambiarest')}}" method="get">                            
+                                    <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
+                                    <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
+                                </form>
                             </td>
                             
                         </tr>

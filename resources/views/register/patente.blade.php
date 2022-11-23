@@ -2,5 +2,5 @@
 
 @section('cuerpo_central')
     
-    @include('register.rut')
+    @include('register.formpatente')
 @endsection
