@@ -45,37 +45,53 @@
                     <tbody>
                         @foreach($estacionamientos as $estacionamiento)
                         <tr>
-                            <td>{{$estacionamiento['codigo']}}</td>
-                            <td>{{$estacionamiento['patente']}}</td>
-                            <td>{{$estacionamiento['hora_ingreso']}}</td>
-                            @if ($estacionamiento['estado_est']==1)
-                                
+                        
+                            <td>{{ $estacionamiento['codigo'] }}</td>
                             
-                            <td>
-                                <form action="{{route('editarSalida')}}" method="get">      
-                                    <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">                      
-                                    <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="   OCUPADO   ">
-                                </form>
-                            </td>
-
+                                @if (array_key_exists('patente',$estacionamiento))
+                                    <td>{{ $estacionamiento['patente'] }}</td>
+                                @else
+                                    <td> </td>
+                                    @endif
+                                @if (array_key_exists('hora_ingreso',$estacionamiento))
+                                    <td>{{ $estacionamiento['hora_ingreso'] }}</td>
+                                @else
+                                    <td> </td>
+                                    @endif
+                              
+                                        @if (array_key_exists('estado_est',$estacionamiento))
+                                        <td>
+                                            <form action="{{route('editarSalida')}}" method="get">      
+                                                <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
+                                                <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}">                      
+                                                <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="   OCUPADO   ">
+                                            </form>
+                                        </td>
+                                        @else
+                                        <td>
+                                            <form action="{{route('buscarest')}}" method="get">                            
+                                                <input type="submit" class="btn btn-success btn-icon-split btn-sm" value="   DISPONIBLE   ">
+                                                <input type="hidden" class="form-control" name="codigo" id="codigo" value="{{$estacionamiento['codigo']}}">
+                                                <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}"> 
+                                            </form>
+                                        </td> 
+                                        @endif
+                                        <td>
+                                            @if (array_key_exists('id',$estacionamiento))
+                                            <form action="{{route('cambiarest')}}" method="get">                            
+                                                <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
+                                                @if (array_key_exists('id',$estacionamiento))
+                                                <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
+                                                <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}"> 
+                                                @endif
+                                            </form>
+                                            @endif
+                                        </td>
                                 
-                            @else
-                            <td>
-                                <form action="{{route('buscarest')}}" method="get">                            
-                                    <input type="submit" class="btn btn-success btn-icon-split btn-sm" value="   DISPONIBLE   ">
-                                    <input type="hidden" class="form-control" name="codigo" id="codigo" value="{{$estacionamiento['codigo']}}">
-                                </form>
-                            </td> 
-                            @endif
-                            <td>
-                                <form action="{{route('cambiarest')}}" method="get">                            
-                                    <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
-                                    <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
-                                </form>
-                            </td>
-                            
+                                        
                         </tr>
-                        @endforeach                                            
+                        
+                        @endforeach                                         
                     </tbody>
                 </table>
             </div>

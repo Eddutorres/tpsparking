@@ -5,7 +5,7 @@
     <div class="card shadow-lg border-0 rounded-lg mt-5">
 
         <div class="card-header justify-content-center">
-            <h3 class="fw-light my-4">Registrar Ingreso 2</h3>
+            <h3 class="fw-light my-4">Registrar Ingreso</h3>
         </div>
        
         <div class="card-body">
@@ -13,7 +13,7 @@
             <!-- Registration form-->
            
                 <!-- Form Row-->
-                <form action="{{route('guardar.ingreso')}}" method="POST">
+                <form action="{{route('guardar.ingreso')}}" method="POST" class="formulario-ingresar">
                     {{ csrf_field() }}
                     @method('post')
                     <input type="hidden" id="estado_est" name="estado_est" value="1">
@@ -75,7 +75,7 @@
                         <label for="hora_ingreso">Hora Ingreso</label>
                         <div class="mb-3">
                             <div class="input-group">
-                                    <input id="hora_ingreso" type="time" name="hora_ingreso" class="form-control" aria-describedby="basic-addon2" value="<?php date_default_timezone_set("America/Santiago"); echo date("h:i");?>">
+                                    <input id="hora_ingreso" type="time" name="hora_ingreso" class="form-control" aria-describedby="basic-addon2" value="<?php date_default_timezone_set("America/Santiago"); echo date("H:i");?>">
                                 <div class="input-group-append">
                                     <input type="date" id="fecha" class="form-control" name="fecha" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                                 </div>
@@ -89,7 +89,7 @@
                 <hr class="sidebar-divider">
                     <input type="submit" class="btn btn-success btn-success" value="Asignar Estacionamiento">
                 <a class="btn btn-secondary btn-secondary"
-                    href="registrar_ingreso.html">Cancelar</a>
+                    href="{{ url('/ingresos' )}}">Cancelar</a>
                 </form>
         </div>
     

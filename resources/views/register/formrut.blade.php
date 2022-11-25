@@ -4,7 +4,7 @@
     <div class="card shadow-lg border-0 rounded-lg mt-5">
 
         <div class="card-header justify-content-center">
-            <h3 class="fw-light my-4">Registrar Ingreso 1</h3>
+            <h3 class="fw-light my-4">Registrar Ingreso</h3>
         </div>
        
         <div class="card-body">
@@ -35,7 +35,7 @@
                         <div class="mb-3">
                             <form action="{{route('buscarrut')}}" method="get" >
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Ingresar RUT" aria-label="Search" aria-describedby="basic-addon2" name="rut" id="rut">
+                                    <input type="text" class="form-control" placeholder="Ingresar RUT" aria-label="Search" aria-describedby="basic-addon2" name="rut" id="rut" required>
                                     <input type="hidden" id="codigo" name="codigo" value="{{ $estacionamiento['codigo'] }}">
                                     <div class="input-group-append">
                                         <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">                          
@@ -67,7 +67,7 @@
                         <label for="hora_ingreso">Hora Ingreso</label>
                         <div class="mb-3">
                             <div class="input-group">
-                                    <input id="hora_ingreso" type="time" name="hora_ingreso" class="form-control" aria-describedby="basic-addon2" value="<?php date_default_timezone_set("America/Santiago"); echo date("h:i");?>">
+                                    <input id="hora_ingreso" type="time" name="hora_ingreso" class="form-control" aria-describedby="basic-addon2" value="<?php date_default_timezone_set("America/Santiago"); echo date("H:i");?>">
                                 <div class="input-group-append">
                                     <input type="date" id="fecha" class="form-control" name="fecha" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                                 </div>
@@ -78,7 +78,7 @@
             
                 <!-- Form Group (create account submit)-->
                 <a class="btn btn-secondary btn-secondary"
-                    href="registrar_ingreso.html">Cancelar</a>
+                    href="{{ url('/ingresos' )}}">Cancelar</a>
         </div>
     
     </div>

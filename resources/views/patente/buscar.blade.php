@@ -23,6 +23,12 @@
                             </thead>
 
                             <tbody>
+                                @if(count($patentes)<=0)
+                                    <tr>
+                                        <td colspan="6">La patente no se encuentra en el terminal</td>
+
+                                    </tr>
+                                @else
                                 @foreach($patentes as $patente)
                                 <tr>
                                     <td>{{$patente['patente']}}</td>
@@ -33,6 +39,7 @@
                                     <td>{{$patente['telefono']}}</td>
                                 </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>

@@ -12,11 +12,12 @@
         </div>
         <div class="card-body">
             <!-- Registration form-->
-            <form method="POST" action="{{route('confirmarsalida')}}">
+            <form method="POST" action="{{route('confirmarsalida')}}" class="formulario-liberar">
                 @csrf
                 @method('PUT')
                 
-                <input type="hidden" class="form-control" name="estado_est" id="estado_est" value="0">  
+                <input type="hidden" class="form-control" name="estado_est" id="estado_est" value="0"> 
+                <input type="hidden" class="form-control" name="sector" id="sector" value="{{$sector}}"> 
                 <!-- Form Row-->
                 @foreach($registros as $registro)
                 <input type="hidden" class="form-control" name="id" id="id" value="{{$registro['id']}}">
@@ -57,7 +58,7 @@
                         <label for="hora_salida">Hora Salida</label>
                         <div class="mb-3">
                             <input class="form-control" name="hora_salida" id="hora_salida" type="time"
-                            value="<?php date_default_timezone_set("America/Santiago"); echo date("h:i");?>" >
+                            value="<?php date_default_timezone_set("America/Santiago"); echo date("H:i");?>" >
                         </div>
                     </div>
                 </div>
@@ -97,4 +98,47 @@
 
 </div>
 
+@endsection
+@section('js')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(session('salir')=='ok')
+
+        <script>
+            Swal.fire(
+            'Deleted!',
+            'Your file has been Ingresado',
+            'success'
+            )
+
+        </script>
+
+    @endif
+    <script>
+
+        $('.formulario-liberar').submit(function(e){
+            e.preventDefault();
+
+            Swal.fire({
+        title: '¿Registrar la salida?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Registrado',
+            'Se ha registrado la salida',
+            'success'
+            )
+            this.submit();
+            
+        }
+        })
+        });
+
+    </script>
 @endsection

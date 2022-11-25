@@ -31,7 +31,7 @@ class RegistroController extends Controller
             'patente'=>$ingreso->patente
         ]);
 
-        return to_route('ingresoreg');
+        return to_route('ingresoreg')->with('ingresar', 'ok');
         //return dd($ingreso);
     }
 
@@ -54,7 +54,22 @@ class RegistroController extends Controller
     public function mostrarSec(Request $estacionamientos){
 
         $sector = $estacionamientos->get('sector');
-        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinest/'.$sector)->json();
+        $fecha_reg = $estacionamientos->get('fecha_reg');
+
+        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/estsector/'.$sector)->json();
+
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registroFecha/'.$fecha_reg)->json();
+
+        foreach($estacionamientos as $k => $v){
+            foreach($registros as $kk => $vv){
+              if($v['codigo'] == $vv['codigo_est']){
+                  foreach($vv as $key => $val){
+                    $estacionamientos[$k][$key] = $val; 
+                  }
+              }
+            }
+         }
+
     
        return view('ingresos/sector', compact('estacionamientos','sector'));
        //return dd($estacionamientos);
@@ -64,6 +79,8 @@ class RegistroController extends Controller
         $patente = $patentes->get('patente');
         $fecha = $patentes->get('fecha');
         $patentes = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/patentereg/'.$patente.'/'.$fecha)->json();
+
+        
     
        return view('patente/buscarpatente', compact('patentes'));
        //return dd($estacionamientos);
@@ -82,7 +99,8 @@ class RegistroController extends Controller
         'estado_est' => $registro->estado_est,
         'hora_salida' => $registro->hora_salida,
         ]);
-        return to_route('ingresoreg');
+        return view('ingresos/inicio')->with('salir', 'ok');
+        //return to_route('ingresoreg');
         //return dd($registro);
 
     }
@@ -106,10 +124,11 @@ class RegistroController extends Controller
     }
     public function buscarjoinId(Request $registros){
 
+        $sector = $registros->get('sector');
         $id = $registros->id;
         $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinid/'.$id)->json();
 
-        return view('salidas/formsalida',compact('registros'));
+        return view('salidas/formsalida',compact('registros','sector'));
         //return dd($registros);
     }
     public function cambiarEst(Request $registro){
@@ -119,7 +138,7 @@ class RegistroController extends Controller
         
         'codigo_est' => $registro->codigo_est,
         ]);
-        return to_route('ingresoreg');
+        return to_route('ingresoreg')->with('cambiar', 'ok');
         //return dd($registro);
 
     }

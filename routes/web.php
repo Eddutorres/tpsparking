@@ -26,7 +26,7 @@ Route::get('/', function (){
 
 Route::get('/principal', function (){ 
 
-    return view('tema.principal');
+    return view('ingresos.inicio');
 });
 Route::get('/reportes', function (){ 
 

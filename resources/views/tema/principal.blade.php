@@ -87,8 +87,8 @@
                     <!-- Topbar Search -->
                     <form action="{{route('buscarpatente')}}" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Búsqueda por patente" aria-label="Search" aria-describedby="basic-addon2" name="patente" id="patente">
-                                <input type="date" class="form-control" name="fecha" id="fecha" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
+                            <input type="text" class="form-control" placeholder="Búsqueda por patente" aria-label="Search" aria-describedby="basic-addon2" name="patente" id="patente" required>
+                                <input type="hidden" class="form-control" name="fecha" id="fecha" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                             <div class="input-group-append">
                                 <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">                          
                             </div>
@@ -187,7 +187,7 @@
                 <div class="modal-body">Selecciona "Salir" para cerrar sesión.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="ingresar.html">Salir</a>
+                    <a class="btn btn-primary" href="{{ url('/reportes' )}}">Salir</a>
                 </div>
             </div>
         </div>
@@ -209,7 +209,7 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    @yield('js')
 </body>
 
 </html>

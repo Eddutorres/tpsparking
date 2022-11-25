@@ -24,6 +24,11 @@
             </thead>
 
             <tbody>
+                @if(count($reportes)<=0)
+                    <tr>
+                        <td colspan="8">No existen registros</td>
+                    </tr>
+                @else
                 @foreach($reportes as $reporte)
                 <tr>
                     <td>{{$reporte['fecha']}}</td>
@@ -36,6 +41,7 @@
                     <td>{{$reporte['hora_salida']}}</td>
                 </tr>
                 @endforeach
+                @endif
             </tbody>
         </table>
     </div>

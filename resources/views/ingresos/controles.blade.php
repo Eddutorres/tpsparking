@@ -16,6 +16,7 @@
                                     
                                     
                                         <input type="hidden" class="form-control" name="sector" id="sector" value="Varas">
+                                        <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                                     <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                     
                                     <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="   SECTOR VARAS   ">
@@ -38,6 +39,7 @@
                             <form action="{{route('mostrarsec')}}" method="get">
                                 
                                     <input type="hidden" class="form-control" name="sector" id="sector" value="Prat">
+                                    <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                 
                                 <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="   SECTOR PRAT   ">
@@ -61,6 +63,7 @@
                             <form action="{{route('mostrarsec')}}" method="get">
                                 
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="Centro">
+                                <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                             
                             <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="   SECTOR CENTRO   ">
@@ -84,6 +87,7 @@
                             <form action="{{route('mostrarsec')}}" method="get">
                                 
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="50">
+                                <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                             
                             <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="   SECTOR 50   ">
