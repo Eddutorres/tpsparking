@@ -61,6 +61,15 @@
                     <span>GENERAR REPORTE</span></a>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Generar Reporte -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url('/estacionamientos' )}}">
+                    <i class="fas fa-fw fa-edit"></i>
+                    <span>EDITAR ESTACIONAMIENTOS</span></a>
+            </li>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -153,25 +162,13 @@
 
             </div>
             <!-- Editar Grilla Modal-->
-            
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>TPS Parking 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
-
-
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

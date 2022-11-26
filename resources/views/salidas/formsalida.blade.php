@@ -18,6 +18,7 @@
                 
                 <input type="hidden" class="form-control" name="estado_est" id="estado_est" value="0"> 
                 <input type="hidden" class="form-control" name="sector" id="sector" value="{{$sector}}"> 
+                <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                 <!-- Form Row-->
                 @foreach($registros as $registro)
                 <input type="hidden" class="form-control" name="id" id="id" value="{{$registro['id']}}">

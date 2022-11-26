@@ -28,6 +28,10 @@ Route::get('/principal', function (){
 
     return view('ingresos.inicio');
 });
+Route::get('/estacionamientos', function (){ 
+
+    return view('estacionamientos.inicio');
+});
 Route::get('/reportes', function (){ 
 
     return view('reportes.reportes');
@@ -47,6 +51,9 @@ Route::get('salidas', [RegistroController::class,'buscarjoinId'])->name('editarS
 Route::get('persona', [PersonaController::class,'buscarRut'])->name('buscarrut');
 Route::get('reporte/pdf', [ReporteController::class,'downloadPDF'])->name('descargar-pdf');
 Route::get('est', [EstacionamientoController::class,'buscarEst'])->name('buscarest');
+Route::get('listarest', [EstacionamientoController::class,'listarEst'])->name('listarest');
+Route::post('agregarest', [EstacionamientoController::class,'agregarEst'])->name('agregarest');
+Route::delete('eliminarest', [EstacionamientoController::class,'eliminarEst'])->name('eliminarest');
 Route::get('reporte', [ReporteController::class,'crearReporte'])->name('crear.reporte');
 Route::get('ingreso', [RegistroController::class,'mostrarSec'])->name('mostrarsec');
 Route::get('registros', [RegistroController::class,'index'])->name('todoslosregistros');

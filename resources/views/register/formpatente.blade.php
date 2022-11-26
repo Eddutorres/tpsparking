@@ -17,12 +17,15 @@
                     {{ csrf_field() }}
                     @method('post')
                     <input type="hidden" id="estado_est" name="estado_est" value="1">
+                    <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                     <!-- Form Group (last name)-->
                     <label for="codigo_est">Estacionamiento</label>
                     <div class="col-md-2">
                         <div class="mb-3">
                             <input id="codigo" type="text" name="codigo" class="form-control"
                             value=" {{ $codigo}} ">
+                            <input id="sector" type="text" name="sector" class="form-control"
+                            value=" {{ $sector}} ">
                         </div>
                     </div>
               

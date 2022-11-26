@@ -37,6 +37,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Ingresar RUT" aria-label="Search" aria-describedby="basic-addon2" name="rut" id="rut" required>
                                     <input type="hidden" id="codigo" name="codigo" value="{{ $estacionamiento['codigo'] }}">
+                                    <input type="hidden" id="sector" name="sector" value="{{ $estacionamiento['sector'] }}">
                                     <div class="input-group-append">
                                         <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">                          
                                     </div>
