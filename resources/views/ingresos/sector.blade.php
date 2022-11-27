@@ -61,7 +61,7 @@
                               
                                         @if (array_key_exists('estado_est',$estacionamiento))
                                         <td>
-                                            <form action="{{route('editarSalida')}}" method="get">      
+                                            <form action="{{route('editar.salida')}}" method="get">      
                                                 <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
                                                 <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}">                      
                                                 <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="   OCUPADO   ">
@@ -69,7 +69,7 @@
                                         </td>
                                         @else
                                         <td>
-                                            <form action="{{route('buscarest')}}" method="get">                            
+                                            <form action="{{route('buscar.est')}}" method="get">                            
                                                 <input type="submit" class="btn btn-success btn-icon-split btn-sm" value="   DISPONIBLE   ">
                                                 <input type="hidden" class="form-control" name="codigo" id="codigo" value="{{$estacionamiento['codigo']}}">
                                                 <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}"> 
@@ -78,7 +78,7 @@
                                         @endif
                                         <td>
                                             @if (array_key_exists('id',$estacionamiento))
-                                            <form action="{{route('cambiarest')}}" method="get">                            
+                                            <form action="{{route('cambiar.est')}}" method="get">                            
                                                 <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
                                                 @if (array_key_exists('id',$estacionamiento))
                                                 <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">

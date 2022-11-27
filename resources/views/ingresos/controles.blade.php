@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <form action="{{route('mostrarsec')}}" method="get">
+                                <form action="{{route('mostrar.sec')}}" method="get">
                                     
                                     
                                         <input type="hidden" class="form-control" name="sector" id="sector" value="Varas">
@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <form action="{{route('mostrarsec')}}" method="get">
+                            <form action="{{route('mostrar.sec')}}" method="get">
                                 
                                     <input type="hidden" class="form-control" name="sector" id="sector" value="Prat">
                                     <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
@@ -60,7 +60,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             
-                            <form action="{{route('mostrarsec')}}" method="get">
+                            <form action="{{route('mostrar.sec')}}" method="get">
                                 
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="Centro">
                                 <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
@@ -84,7 +84,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             
-                            <form action="{{route('mostrarsec')}}" method="get">
+                            <form action="{{route('mostrar.sec')}}" method="get">
                                 
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="50">
                                 <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">

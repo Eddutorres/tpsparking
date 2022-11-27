@@ -12,7 +12,7 @@
         </div>
         <div class="card-body">
             <!-- Registration form-->
-            <form method="POST" action="{{route('confirmarsalida')}}" class="formulario-liberar">
+            <form method="POST" action="{{route('confirmar.salida')}}" class="formulario-liberar">
                 @csrf
                 @method('PUT')
                 

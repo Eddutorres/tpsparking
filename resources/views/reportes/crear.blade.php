@@ -49,7 +49,7 @@
 
     <!-- DataTales Example -->
     <div class="card-body">
-        <form action="{{route('descargar-pdf')}}" method="get">
+        <form action="{{route('descargar.pdf')}}" method="get">
                 <td>
                     <input type="submit" class="btn btn-warning btn-icon-split right-align btn-sm" value="DESCARGAR REPORTE">
                 </td>

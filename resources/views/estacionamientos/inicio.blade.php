@@ -23,7 +23,7 @@
                     <tr>
                         <td>VARAS</td>
                         <td>
-                            <form action="{{route('listarest')}}" method="get">                            
+                            <form action="{{route('listar.est')}}" method="get">                            
                                 <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="Varas">
                             </form>
@@ -32,7 +32,7 @@
                     <tr>
                         <td>PRAT</td>
                         <td>
-                            <form action="{{route('listarest')}}" method="get">                            
+                            <form action="{{route('listar.est')}}" method="get">                            
                                 <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="Prat">
                             </form>
@@ -42,7 +42,7 @@
                     <tr>
                         <td>CENTRO</td>
                         <td>
-                            <form action="{{route('listarest')}}" method="get">                            
+                            <form action="{{route('listar.est')}}" method="get">                            
                                 <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="Centro">
                             </form>
@@ -52,7 +52,7 @@
                     <tr>
                         <td>50</td>
                         <td>
-                            <form action="{{route('listarest')}}" method="get">                            
+                            <form action="{{route('listar.est')}}" method="get">                            
                                 <input type="submit" class="btn btn-warning btn-icon-split btn-sm" value="EDITAR">
                                 <input type="hidden" class="form-control" name="sector" id="sector" value="50">
                             </form>

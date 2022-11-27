@@ -33,7 +33,7 @@
                         <!-- Form Group (first name)-->
                     
                         <div class="mb-3">
-                            <form action="{{route('buscarrut')}}" method="get" >
+                            <form action="{{route('buscar.rut')}}" method="get" >
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Ingresar RUT" aria-label="Search" aria-describedby="basic-addon2" name="rut" id="rut" required>
                                     <input type="hidden" id="codigo" name="codigo" value="{{ $estacionamiento['codigo'] }}">

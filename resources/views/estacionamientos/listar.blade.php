@@ -25,7 +25,7 @@
                         <td>{{ $estacionamiento['sector'] }}</td>
                         <td>{{ $estacionamiento['codigo'] }}</td>
                         <td>
-                            <form action="{{route('eliminarest')}}" method="post">
+                            <form action="{{route('eliminar.est')}}" method="post" class="formulario-eliminar">
                                 {{ csrf_field() }}
                                 @method('DELETE')                    
                                 <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="ELIMINAR">
@@ -42,7 +42,7 @@
                     <div class="col-md-4">
                         <!-- Form Group (first name)-->
                         <div class="mb-2">
-                            <form action="{{route('agregarest')}}" method="post" >
+                            <form action="{{route('agregar.est')}}" method="post" class="formulario-agregar">
                                 {{ csrf_field() }}
                                 @method('post')
                                 <div class="input-group">
@@ -64,4 +64,60 @@
 
 </div>
 <!-- End of Main Content -->
+@endsection
+@section('js')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+        $('.formulario-eliminar').submit(function(e){
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¿Eliminar el estacionamiento?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Eliminar',
+                cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+            'Eliminado',
+            'El estacionamiento ha sido eliminado',
+            'success'
+            )
+                    this.submit();
+                }
+                })
+                });
+
+</script>
+<script>
+                    $('.formulario-agregar').submit(function(e){
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¿Agregar el estacionamiento?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Agregar',
+                cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+            'Agregado',
+            'El estacionamiento ha sido agregado',
+            'success'
+            )
+                    this.submit();
+                }
+                })
+                });
+
+
+</script>
 @endsection
