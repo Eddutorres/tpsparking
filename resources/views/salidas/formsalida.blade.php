@@ -49,6 +49,14 @@
                             value="{{ $registro['nombre1']." ".$registro['apellido1'] }}" disabled>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <!-- Form Group (last name)-->
+                        <label for="conductor">Estacionamiento</label>
+                        <div class="mb-3">
+                            <input class="form-control" id="codigo_est" name="codigo_est" type="text"
+                            value="{{ $registro['codigo_est'] }}" disabled>
+                        </div>
+                    </div>
 
                     <div class="col-md-6">
                         <!-- Form Group (last name)-->
@@ -121,7 +129,7 @@
             e.preventDefault();
 
             Swal.fire({
-        title: '¿Registrar la salida?',
+        title: '¿Registrar la salida de estacionamiento {{ $registro['codigo_est'] }}?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -132,7 +140,7 @@
         if (result.isConfirmed) {
             Swal.fire(
             'Registrado',
-            'Se ha registrado la salida',
+            'Se ha registrado la salida de estacionamiento {{ $registro['codigo_est'] }}',
             'success'
             )
             this.submit();

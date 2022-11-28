@@ -63,7 +63,8 @@
                                         <td>
                                             <form action="{{route('editar.salida')}}" method="get">      
                                                 <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
-                                                <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}">                      
+                                                <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}">
+                                                                      
                                                 <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="   OCUPADO   ">
                                             </form>
                                         </td>
@@ -83,6 +84,7 @@
                                                 @if (array_key_exists('id',$estacionamiento))
                                                 <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
                                                 <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}"> 
+                                                <input type="hidden" class="form-control" name="codigo" id="codigo" value="{{$estacionamiento['codigo_est']}}"> 
                                                 @endif
                                             </form>
                                             @endif

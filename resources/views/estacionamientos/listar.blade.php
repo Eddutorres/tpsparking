@@ -30,6 +30,7 @@
                                 @method('DELETE')                    
                                 <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="ELIMINAR">
                                 <input type="hidden" class="form-control" name="est_id" id="est_id" value="{{ $estacionamiento['est_id'] }}">
+                                <input type="hidden" class="form-control" name="codigo" id="codigo" value="{{ $estacionamiento['codigo'] }}">
                                 <input type="hidden" id="sector" name="sector" value="{{ $estacionamiento['sector'] }}">
                             </form>
                         </td>
@@ -48,7 +49,6 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Número estacionamiento" aria-label="Search" aria-describedby="basic-addon2" name="codigo" id="codigo" required>
                                     <input type="hidden" id="sector" name="sector" value="{{ $estacionamiento['sector'] }}">
-                                    
                                     <div class="input-group-append">
                                         <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value=" AGREGAR ">                          
                                     </div>
@@ -74,7 +74,7 @@
             e.preventDefault();
 
             Swal.fire({
-                title: '¿Eliminar el estacionamiento?',
+                title: '¿Eliminar el estacionamiento {{ $estacionamiento['codigo'] }} ?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -85,7 +85,7 @@
                 if (result.isConfirmed) {
                     Swal.fire(
             'Eliminado',
-            'El estacionamiento ha sido eliminado',
+            'El estacionamiento {{ $estacionamiento['codigo'] }} ha sido eliminado',
             'success'
             )
                     this.submit();

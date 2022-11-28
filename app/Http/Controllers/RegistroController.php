@@ -154,8 +154,9 @@ class RegistroController extends Controller
 
         $id= $registro->get('id');
         $sector= $registro->get('sector');
+        $codigo= $registro->get('codigo');
             
-       return view('ingresos/cambiarest', compact('id','sector'));
+       return view('ingresos/cambiarest', compact('id','sector', 'codigo'));
        //return dd($estacionamientos);
     }
 }

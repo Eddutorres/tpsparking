@@ -12,7 +12,14 @@
         <form method="POST" action="{{route('cambiar.estacionamiento')}}" class="formulario-cambiar">
             @csrf
             @method('PUT')
-            <br><br>
+            <br>
+            <label for="codigo_est">Estacionamiento actual </label>
+            <div class="input-group">
+             
+                <input type="text" id="codigo" name="codigo" value="{{$codigo}}" disabled>
+                <input type="hidden" id="codigo1" name="codigo1" value="{{$codigo}}">
+            </div>
+            <br>
             <label for="codigo_est">Ingrese nuevo estacionamiento </label>
             <div class="input-group">
                 
