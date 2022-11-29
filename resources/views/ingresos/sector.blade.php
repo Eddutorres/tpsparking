@@ -64,6 +64,7 @@
                                             <form action="{{route('editar.salida')}}" method="get">      
                                                 <input type="hidden" class="form-control" name="id" id="id" value="{{$estacionamiento['id']}}">
                                                 <input type="hidden" class="form-control" name="sector" id="sector" value="{{$estacionamiento['sector']}}">
+                                                <input type="hidden" class="form-control" name="rut" id="rut" value="{{$estacionamiento['rut']}}">
                                                                       
                                                 <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="   OCUPADO   ">
                                             </form>

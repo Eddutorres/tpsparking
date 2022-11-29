@@ -87,7 +87,7 @@
     
     </div>
     <!-- /.container-fluid -->
-
+    <script src="js/validacion.js"></script>
 </div>
 <!-- End of Main Content -->
 @endsection

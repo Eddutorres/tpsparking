@@ -32,17 +32,11 @@
                             value=" {{ $sector}} ">
                         </div>
                     </div>
-              
-                
-                
                 <div class="row gx-3">
-
                     @foreach($personas as $persona)
                     <div class="col-md-6">
                         <!-- Form Group (first name)-->
-                    
                         <div class="mb-3">
-                            
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Ingresar RUT"  
                                      name="rut" id="rut" value=" {{ trim($persona['rut']) }} ">
@@ -51,21 +45,15 @@
                                         <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">                          
                                     </div>
                                 </div>
-                            
-                            
                         </div>
-                    
                     </div>
-                    
                     <div class="col-md-6">
                         <!-- Form Group (last name)-->
                         <div class="mb-3">
                             <input class="form-control" id="conductor" type="text" placeholder="Conductor" 
                             value=" {{ $persona['nombre1'].' '.$persona['nombre2'].' '.$persona['apellido1'].' '.$persona['apellido2'] }} " disabled>
-
                         </div>
                     </div>
-                    
                     <div class="col-md-6">
                         <label for="patente">Patente</label>
                         <div class="mb-3">

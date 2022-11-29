@@ -17,7 +17,7 @@ Route::get('/reportes', function (){ return view('reportes.reportes');});
 Route::get('/ingresos', function (){return view('ingresos.inicio');})->name('ingreso.reg');
 Route::get('patente', [RegistroController::class,'patenteReg'])->name('buscar.patente');
 Route::get('ingreso', [RegistroController::class,'mostrarSec'])->name('mostrar.sec');
-Route::get('salidas', [RegistroController::class,'buscarjoinId'])->name('editar.salida');
+Route::get('salidas', [RegistroController::class,'buscarReg'])->name('editar.salida');
 Route::get('cambiar', [RegistroController::class,'enviarId'])->name('cambiar.est');
 Route::post('regingreso',[RegistroController::class, 'guardarReg'])->name('guardar.ingreso');
 Route::put('salida', [RegistroController::class,'confirmarSalida'])->name('confirmar.salida');

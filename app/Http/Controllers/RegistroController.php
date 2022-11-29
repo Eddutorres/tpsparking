@@ -37,8 +37,8 @@ class RegistroController extends Controller
          }
 
     
-       return view('ingresos/sector', compact('estacionamientos','sector'))->with('ingresar', 'ok');
-        //return dd($ingreso);
+       return view('ingresos/sector', compact('estacionamientos','sector'));
+    
     }
     
     public function mostrarSec(Request $estacionamientos){
@@ -63,17 +63,25 @@ class RegistroController extends Controller
     
        return view('ingresos/sector', compact('estacionamientos','sector'));
        //return dd($estacionamientos);
+
     }
     public function patenteReg(Request $patentes){
 
         $patente = $patentes->get('patente');
         $fecha = $patentes->get('fecha');
-        $patentes = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/patentereg/'.$patente.'/'.$fecha)->json();
+        $estado_est = $patentes->get('estado_est');
+        $patentes = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registroPatente/'.$patente.'/'.$fecha.'/'.$estado_est)->json();
+        foreach($patentes as $patente){
+          $codigo = $patente['codigo_est'];
+          $rut = $patente['rut'];
+          }
+        $estacionamientos = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/estacionamiento/'.$codigo)->json();
 
+        $personas = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/buscarRut/'.$rut)->json();
         
     
-       return view('patente/buscarpatente', compact('patentes'));
-       //return dd($estacionamientos);
+       return view('patente/buscarpatente', compact('patentes','estacionamientos','personas'));
+       //return dd($personas);
     }
 
     public function edit($id){
@@ -104,20 +112,21 @@ class RegistroController extends Controller
               }
             }
          }
-
-    
        return view('ingresos/sector', compact('estacionamientos','sector'));
 
     }
 
-    public function buscarjoinId(Request $registros){
+    public function buscarReg(Request $registro){
 
-        $sector = $registros->get('sector');
-        $id = $registros->id;
-        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/joinid/'.$id)->json();
+        $sector = $registro->get('sector');
+        $rut = $registro->get('rut');
+        $id = $registro->get('id');
+        $registros = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/registro/'.$id)->json();
+        
+        $personas = Http::get('http://webservicetps-env.eba-uzinfdjq.us-east-1.elasticbeanstalk.com/api/buscarRut/'.$rut)->json();
 
-        return view('salidas/formsalida',compact('registros','sector'));
-        //return dd($registros);
+       return view('salidas/formsalida',compact('registros','personas','sector'));
+      //return dd($registros);
     }
     public function cambiarEst(Request $registro){
 
@@ -145,8 +154,6 @@ class RegistroController extends Controller
               }
             }
          }
-
-    
        return view('ingresos/sector', compact('estacionamientos','sector'));
 
     }

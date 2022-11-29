@@ -15,10 +15,10 @@
                                 <tr>
                                     <th>Patente</th>
                                     <th>Hora Ingreso</th>
-                                    <th>Sector</th>
                                     <th>Número</th>
-                                    <th>Conductor</th>
+                                    <th>Sector</th>
                                     <th>Contacto</th>
+                                    <th>Conductor</th>
                                 </tr>
                             </thead>
 
@@ -29,16 +29,22 @@
 
                                     </tr>
                                 @else
-                                @foreach($patentes as $patente)
+                                
                                 <tr>
+                                    @foreach($patentes as $patente)
                                     <td>{{$patente['patente']}}</td>
                                     <td>{{$patente['hora_ingreso']}}</td>
-                                    <td>{{$patente['sector']}}</td>
-                                    <td>{{$patente['codigo']}}</td>
-                                    <td>{{$patente['nombre1']." ".$patente['apellido1']}}</td>
-                                    <td>{{$patente['telefono']}}</td>
+                                    <td>{{$patente['codigo_est']}}</td>
+                                    @endforeach
+                                    @foreach($estacionamientos as $estacionamiento)
+                                    <td>{{$estacionamiento['sector']}}</td>
+                                    @endforeach
+                                    @foreach($personas as $persona)
+                                    <td>{{$persona['telefono']}}</td>
+                                    <td>{{$persona['nombre1']." ".$persona['apellido1']}}</td>
+                                    @endforeach
                                 </tr>
-                                @endforeach
+                                
                                 @endif
                             </tbody>
                         </table>

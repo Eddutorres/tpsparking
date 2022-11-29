@@ -98,6 +98,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Búsqueda por patente" aria-label="Search" aria-describedby="basic-addon2" name="patente" id="patente" required>
                                 <input type="hidden" class="form-control" name="fecha" id="fecha" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
+                                <input type="hidden" class="form-control" name="estado_est" id="estado_est" value="1">
                             <div class="input-group-append">
                                 <input type="submit" class="btn btn-primary btn-icon-split btn-primary" value="Buscar">                          
                             </div>

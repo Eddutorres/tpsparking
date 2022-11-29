@@ -15,20 +15,20 @@
             <form method="POST" action="{{route('confirmar.salida')}}" class="formulario-liberar">
                 @csrf
                 @method('PUT')
-                
+                <input type="hidden" class="form-control" name="id" id="id" type="text" value="{{ $registros['id'] }}" >
                 <input type="hidden" class="form-control" name="estado_est" id="estado_est" value="0"> 
                 <input type="hidden" class="form-control" name="sector" id="sector" value="{{$sector}}"> 
                 <input type="hidden" id="fecha_reg" class="form-control" name="fecha_reg" value="<?php date_default_timezone_set("America/Santiago"); echo date("Y-m-d");?>">
                 <!-- Form Row-->
-                @foreach($registros as $registro)
-                <input type="hidden" class="form-control" name="id" id="id" value="{{$registro['id']}}">
+
+                
                 <div class="row gx-3">
                     <div class="col-md-6">
                         <!-- Form Group (first name)-->
                         <label for="rut">Rut</label>
                         <div class="mb-3">
                             <input class="form-control" id="rut" type="text"
-                            value="{{ $registro['rut'] }}" disabled>
+                            value="{{ $registros['rut'] }}" disabled>
 
                         </div>
                     </div>
@@ -37,16 +37,7 @@
                         <label for="patente">Patente</label>
                         <div class="mb-3">
                             <input class="form-control" id="patente" type="text"
-                            value="{{ $registro['patente'] }}" disabled>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <!-- Form Group (last name)-->
-                        <label for="conductor">Conductor</label>
-                        <div class="mb-3">
-                            <input class="form-control" id="conductor" type="text"
-                            value="{{ $registro['nombre1']." ".$registro['apellido1'] }}" disabled>
+                            value="{{ $registros['patente'] }}" disabled>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -54,13 +45,20 @@
                         <label for="conductor">Estacionamiento</label>
                         <div class="mb-3">
                             <input class="form-control" id="codigo_est" name="codigo_est" type="text"
-                            value="{{ $registro['codigo_est'] }}" disabled>
+                            value="{{ $registros['codigo_est'] }}" disabled>
                         </div>
                     </div>
 
+                    @foreach($personas as $persona)
                     <div class="col-md-6">
                         <!-- Form Group (last name)-->
-                        
+                        <label for="conductor">Conductor</label>
+                        <div class="mb-3">
+                            <input class="form-control" id="conductor" type="text"
+                            value="{{ $persona['nombre1']." ".$persona['apellido1'] }}" disabled>
+                        </div>
+                    </div>  
+                    @endforeach                      
                     </div>
                     <div class="col-md-6">
                         <!-- Form Group (last name)-->
@@ -71,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                <div class="col-md-6">
                 <!-- Form Group (create account submit)-->                    
                     <input type="submit" class="btn btn-danger btn-icon-split btn-sm" value="   Liberar Estacionamiento   ">
                 
@@ -129,7 +127,7 @@
             e.preventDefault();
 
             Swal.fire({
-        title: '¿Registrar la salida de estacionamiento {{ $registro['codigo_est'] }}?',
+        title: '¿Registrar la salida de estacionamiento {{ $registros['codigo_est'] }}?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -140,7 +138,7 @@
         if (result.isConfirmed) {
             Swal.fire(
             'Registrado',
-            'Se ha registrado la salida de estacionamiento {{ $registro['codigo_est'] }}',
+            'Se ha registrado la salida de estacionamiento {{ $registros['codigo_est'] }}',
             'success'
             )
             this.submit();
